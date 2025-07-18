@@ -15,5 +15,5 @@ func TestMedian(t *testing.T) {
 }
 
 func TestVariance(t *testing.T) {
-	assert.Equal(t, 1048.0, Variance(78, 63, 53, 91, 55))
+	assert.Equal(t, 209.6, Variance(78, 63, 53, 91, 55))
 }

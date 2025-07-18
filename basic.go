@@ -1,6 +1,8 @@
 package main
 
-import "sort"
+import (
+	"sort"
+)
 
 type Number interface {
 	int | int8 | int16 | int32 | int64 | float32 | float64
@@ -30,5 +32,5 @@ func Variance[N Number](n ...N) float64 {
 	for _, v := range n {
 		result += (float64(v) - m) * (float64(v) - m)
 	}
-	return result
+	return result / float64(len(n))
 }
