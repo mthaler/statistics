@@ -12,3 +12,8 @@ func Mean[N Number](n ...N) float64 {
 	sum = sum / float64(len(n))
 	return sum
 }
+
+func Median[N Number](n ...N) N {
+	l := len(n)
+	return n[l/2]
+}
