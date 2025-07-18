@@ -13,3 +13,7 @@ func TestMean(t *testing.T) {
 func TestMedian(t *testing.T) {
 	assert.Equal(t, 63, Median(53, 55, 63, 78, 81))
 }
+
+func TestVariance(t *testing.T) {
+	assert.Equal(t, 1048.0, Variance(78, 63, 53, 91, 55))
+}
