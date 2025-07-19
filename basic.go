@@ -39,3 +39,10 @@ func Variance[N Number](n ...N) float64 {
 func StandardDeviation[N Number](n ...N) float64 {
 	return math.Sqrt(Variance(n...))
 }
+
+func Skewness[N Number](n ...N) float64 {
+	mean := Mean(n...)
+	median := float64(Median(n...))
+	sd := StandardDeviation(n...)
+	return 3 * (mean - median) / sd
+}
