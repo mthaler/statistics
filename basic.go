@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"sort"
 )
 
@@ -33,4 +34,8 @@ func Variance[N Number](n ...N) float64 {
 		result += (float64(v) - m) * (float64(v) - m)
 	}
 	return result / float64(len(n))
+}
+
+func StandardDeviation[N Number](n ...N) float64 {
+	return math.Sqrt(Variance(n...))
 }
