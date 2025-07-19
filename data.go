@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"io"
 	"os"
 )
 
@@ -12,7 +13,11 @@ func ReadCsvFile(filePath string) ([][]string, error) {
 	}
 	defer f.Close()
 
-	csvReader := csv.NewReader(f)
+	return readCsvFile(f)
+}
+
+func readCsvFile(r io.Reader) ([][]string, error) {
+	csvReader := csv.NewReader(r)
 	records, err := csvReader.ReadAll()
 	if err != nil {
 		return nil, err
