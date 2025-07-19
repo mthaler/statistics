@@ -21,3 +21,7 @@ func TestVariance(t *testing.T) {
 func TestStandardDeviation(t *testing.T) {
 	assert.Equal(t, 14.477568856683085, StandardDeviation(78, 63, 53, 91, 55))
 }
+
+func TestSkewness(t *testing.T) {
+	assert.Equal(t, 1.0360855574916332, Skewness(78, 63, 53, 91, 55))
+}
